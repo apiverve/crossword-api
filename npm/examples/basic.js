@@ -16,7 +16,7 @@ const api = new crosswordAPI({
 // Example query
 var query = {
   size: "medium",
-  theme: "animals",
+  theme: "random",
   difficulty: "medium"
 };
 
