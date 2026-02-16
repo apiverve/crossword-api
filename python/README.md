@@ -44,7 +44,11 @@ from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient
 # Initialize the client with your APIVerve API key
 api = CrosswordAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 ```
 
 ###### Simple Request
@@ -475,7 +483,11 @@ from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient, CrosswordA
 
 api = CrosswordAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -496,7 +508,11 @@ from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient, CrosswordA
 
 api = CrosswordAPIClient("[YOUR_API_KEY]")
 
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -530,7 +546,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient, CrosswordAPIClientError
 
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 
 # Using context manager ensures proper cleanup
 with CrosswordAPIClient("[YOUR_API_KEY]") as api:
@@ -556,7 +576,11 @@ from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient
 # Enable debug mode
 api = CrosswordAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "size": "medium", "theme": "random", "difficulty": "medium" }
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -571,8 +595,13 @@ from apiverve_crosswordgenerator.apiClient import CrosswordAPIClient
 
 api = CrosswordAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "size": "medium",
+    "theme": "random",
+    "difficulty": "medium"
+}
+
 try:
-    query = { "size": "medium", "theme": "random", "difficulty": "medium" }
     result = api.execute(query)
     print(result)
 finally:
