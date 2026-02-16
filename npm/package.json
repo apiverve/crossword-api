@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/crossword",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Crossword Generator creates crossword puzzles with intersecting words, numbered clues, and themed word selection.",
   "main": "index.js",
   "types": "index.d.ts",
