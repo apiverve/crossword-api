@@ -30,7 +30,13 @@ The Crossword Generator API provides a simple, reliable way to integrate crosswo
 ```javascript
 async function callCrosswordGeneratorAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/crossword', {
+        const params = new URLSearchParams({
+            size: 'medium',
+            theme: 'animals',
+            difficulty: 'medium'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/crossword?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +56,7 @@ callCrosswordGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/crossword?param=value" \
+curl -X GET "https://api.apiverve.com/v1/crossword?size=medium&theme=animals&difficulty=medium" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +156,7 @@ go get github.com/apiverve/crossword-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +175,7 @@ go get github.com/apiverve/crossword-api/go
 The Crossword Generator API is commonly used for:
 
 - **Web Applications** - Add crossword generator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with crossword generator capabilities
 - **Data Pipelines** - Process and analyze data at scale
