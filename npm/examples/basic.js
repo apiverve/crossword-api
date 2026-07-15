@@ -17,7 +17,9 @@ const api = new crosswordAPI({
 var query = {
   size: "medium",
   theme: "random",
-  difficulty: "medium"
+  difficulty: "medium",
+  image: false,
+  solutionImage: false
 };
 
 // Make the API request using callback
