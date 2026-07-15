@@ -30,7 +30,7 @@ class crosswordWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/crossword';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"size":{"type":"string","required":false,"default":"medium"},"theme":{"type":"string","required":false,"default":"random"},"difficulty":{"type":"string","required":false,"default":"medium"}};
+        this.validationRules = {"size":{"type":"string","required":false,"default":"medium"},"theme":{"type":"string","required":false,"default":"random"},"difficulty":{"type":"string","required":false,"default":"medium"},"image":{"type":"boolean","required":false,"default":false},"solutionImage":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
