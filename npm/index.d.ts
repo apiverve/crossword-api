@@ -4,39 +4,51 @@ declare module '@apiverve/crossword' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface crosswordResponse {
     status: string;
     error: string | null;
     data: CrosswordGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface CrosswordGeneratorData {
-      size:          number;
-      difficulty:    string;
-      theme:         string;
+      size:          number | null;
+      difficulty:    null | string;
+      theme:         null | string;
       grid:          Array<(null | string)[]>;
       across:        Across[];
       down:          Across[];
-      wordCount:     number;
-      html:          string;
+      wordCount:     number | null;
+      html:          null | string;
       image:         Image;
       solutionImage: Image;
   }
   
   interface Across {
-      number: number;
-      clue:   string;
-      answer: string;
-      length: number;
+      number: number | null;
+      clue:   null | string;
+      answer: null | string;
+      length: number | null;
   }
   
   interface Image {
-      imageName:   string;
-      format:      string;
-      downloadURL: string;
-      expires:     number;
+      imageName:   null | string;
+      format:      null | string;
+      downloadURL: null | string;
+      expires:     number | null;
   }
 
   export default class crosswordWrapper {
