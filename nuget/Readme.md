@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CrosswordGenerator;
 
 class Program
 {
@@ -60,10 +60,12 @@ class Program
         // Initialize the API client
         var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+        var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
         // Make the API call
@@ -118,7 +120,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CrosswordGenerator;
 
 public class Example
 {
@@ -126,10 +128,12 @@ public class Example
     {
         var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+        var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -152,7 +156,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CrosswordGenerator;
 
 public class Example
 {
@@ -160,10 +164,12 @@ public class Example
     {
         var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+        var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,7 +197,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CrosswordGenerator;
 
 public class Example
 {
@@ -199,10 +205,12 @@ public class Example
     {
         var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+        var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
         try
@@ -245,7 +253,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CrosswordGenerator;
 
 public class Example
 {
@@ -257,10 +265,12 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+        var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
         try
@@ -300,10 +310,12 @@ var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,10 +340,12 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -348,10 +362,12 @@ var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -362,10 +378,12 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    size = "medium",
-    theme = "random",
-    difficulty = "medium"
+var queryOptions = new CrosswordGeneratorQueryOptions {
+    Size = "medium",
+    Theme = "random",
+    Difficulty = "medium",
+    Image = true,
+    SolutionImage = true
 };
 
 using (var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -730,16 +748,16 @@ using (var apiClient = new CrosswordGeneratorAPIClient("[YOUR_API_KEY]"))
     "wordCount": 13,
     "html": "<html><head><title>Crossword Puzzle</title><style>body {font-family: Arial, sans-serif; padding: 20px;}h1 {text-align: center; color: #333;}.container {display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;}.grid {display: grid; grid-template-columns: repeat(15, 30px); gap: 1px; background: #333; border: 2px solid #333;}.cell {width: 30px; height: 30px; background: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; position: relative;}.cell.black {background: #333;}.cell-number {position: absolute; top: 1px; left: 2px; font-size: 8px; font-weight: normal;}.clues {max-width: 300px;}.clue-section h3 {margin-bottom: 10px; color: #333;}.clue {margin: 5px 0; font-size: 14px;}.clue-number {font-weight: bold; margin-right: 5px;}</style></head><body><h1>Crossword</h1><div class='container'><div class='grid'><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>1</span></div><div class='cell'></div><div class='cell'><span class='cell-number'>2</span></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>3</span></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>4</span></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>5</span></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>6</span></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>7</span></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>8</span></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>9</span></div><div class='cell'><span class='cell-number'>10</span></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>11</span></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>12</span></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell'><span class='cell-number'>13</span></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div><div class='cell black'></div></div><div class='clues'><div class='clue-section'><h3>Across</h3><div class='clue'><span class='clue-number'>1.</span>Striped big cat (5)</div><div class='clue'><span class='clue-number'>5.</span>Striped horse-like animal (5)</div><div class='clue'><span class='clue-number'>7.</span>King of the jungle (4)</div><div class='clue'><span class='clue-number'>8.</span>Large furry mammal (4)</div><div class='clue'><span class='clue-number'>9.</span>Wild canine that howls (4)</div><div class='clue'><span class='clue-number'>12.</span>Large gray mammal with trunk (8)</div><div class='clue'><span class='clue-number'>13.</span>Black and white bear from China (5)</div></div><div class='clue-section'><h3>Down</h3><div class='clue'><span class='clue-number'>2.</span>Tallest land animal (7)</div><div class='clue'><span class='clue-number'>3.</span>Forest animal with antlers (4)</div><div class='clue'><span class='clue-number'>4.</span>Hopping animal with long ears (6)</div><div class='clue'><span class='clue-number'>6.</span>Intelligent marine mammal (7)</div><div class='clue'><span class='clue-number'>10.</span>Nocturnal bird of prey (3)</div><div class='clue'><span class='clue-number'>11.</span>Flightless bird from Antarctica (7)</div></div></div></div></body></html>",
     "image": {
-      "imageName": "c2d81765-f1e0-4027-a35f-e5b07199719a_puzzle.png",
+      "imageName": "1838121c-9f76-44f8-b197-02e1db5987d5_puzzle.png",
       "format": ".png",
-      "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/crossword/c2d81765-f1e0-4027-a35f-e5b07199719a_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1764735733&Signature=NitxaMzQE1mhPUXGiatXw6CRuBIc0eM6%2FSKplyNtis8%2FspnQ9N5w4Xyrq2wXDvM5GX0zXfAC3xGfNfmJznz9XAkgOfflyF0kVa81nteFARWUF3ZXrhgi0NcMMZiqUwmvW60QFKMrTyt8n24uxtdUn1luOy8XdiquUChdbBHropzKK6qSkLPMABJvIUaDR6SwaMJmEAcNlqURDKBWvKorago5J6kdYWcvy38CtQmTRq0VD%2FqnOe4AqMWB9h56sCEZMcK4CdTFxM70uy5q6QKqJYB3nVClkvrhPiMcaQNv9%2F0uhWncyCUC0hRD%2Bx%2BlTfjAdUtD51ibhHtEJ1a%2B%2BYyiKA%3D%3D",
-      "expires": 1764735733908
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/crossword/1838121c-9f76-44f8-b197-02e1db5987d5_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010128&Signature=OYZsWA9QiINhqgC%2BSZSZpict%2B93ryyxvzUSIohJF%2BMGZ7SLGLA2Q47aVnwzLFzr8ZOK7IUQN4DZrAMh%2B0T8VqTMCLf76tj8BKLB1Qwo4IbMkkat1cbG6AFb44ungHGmCpwjwjwDYMwrDgI8%2Bg8dyKzwMZZmQHf5Q1hYNsy084Q%2BBTLAx6KUL%2FIZdw5pp0Rnxiq8aHdPrm%2Fbq2NU1UuMUDg8uBc8TR%2FHYN%2FOljXeyhv6Nbf4FXJCPLTMDdLDqblecNKhfQ67Dc4FdPD%2BF1IPN2A5G9VfkPb5v5KA5iiM8RF4zr8kHW%2FMlncbKSynvLp7QjtL9qZlSHn3%2Bn0pJpf%2FEUA%3D%3D",
+      "expires": 1766010128609
     },
     "solutionImage": {
-      "imageName": "81403919-e8ad-40be-96d0-4482b24010b8_solution.png",
+      "imageName": "3ec675cd-0e16-4e50-87f4-8f4192abea5b_solution.png",
       "format": ".png",
-      "downloadURL": "https://storage.googleapis.com/apiverve.appspot.com/crossword/81403919-e8ad-40be-96d0-4482b24010b8_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1764735734&Signature=SqUFASLPSSll%2FedCynzwv5w%2BisVTdtf0Oco%2BRBleBRg8cXu%2F3myVaEPhcHG4MGkTvgrv5Xk9CGHKxu8ZDFjL7%2B%2Fw2uwT1nJN05P86SPD1Wshv6zHvcsVIgpbE7ByQ7uDSO6BN9K%2Bkxed7fjv%2BVmPPwZ50XZfZrUObsGbtmDdpn0Qx0ERpAdkqytfBVszsrkINdSlef0OM%2F%2BfPAc3q9%2BWD4lHATo4rFDwlLga%2BoSzYiloJkijwmTnmkI5%2F5pZXbaYmrp7pSIBjlPfY5jdiqrbEvNd7SmSBaXGOcEumd6UAqYNFLcyS0Gvyp41h9CjQDkb7u1nc9EdxhiVmSeBADxzeQ%3D%3D",
-      "expires": 1764735734469
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/crossword/3ec675cd-0e16-4e50-87f4-8f4192abea5b_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010129&Signature=L07115whFCEM3yuFDBILq7r4v26RoSYQzv81S7bwL8yJFcHRjHcKsqUhI6UWaDo4LPKfAjmk%2Fs1gN3z33ma12GE2fJYkp4mxD40EhyY%2BDjR3ja7m%2Fj20Zenu%2FdcOukkS9DCfGiYEa%2BxQDT4I2gjDVORhe7JeDuLeKCFtbsiLZFIlWNZoq6K7YbNc4BWDnwcqviJXSB%2FvWa1FMhXpQFoTIeJVvUCcdOGGVR6Vdl%2BPxwWN%2FAjXcsvNYbIhtyEZHaXQuXxI3zmCMg0eI770cVuhs7rm8JVdN7gYtojprJxTYl9nRx793SRuLcFfJD%2BRhx2dBmpMtXkcZFmv4%2Bz74oZY8Q%3D%3D",
+      "expires": 1766010129033
     }
   }
 }
