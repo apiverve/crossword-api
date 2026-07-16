@@ -27,5 +27,17 @@ namespace APIVerve.API.CrosswordGenerator
         /// </summary>
         [JsonProperty("difficulty")]
         public string Difficulty { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable puzzle image
+        /// </summary>
+        [JsonProperty("image")]
+        public bool? Image { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable solution image
+        /// </summary>
+        [JsonProperty("solutionImage")]
+        public bool? SolutionImage { get; set; }
     }
 }
