@@ -25,12 +25,15 @@ namespace APIVerve.API.CrosswordGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         [JsonProperty("difficulty")]
         public string Difficulty { get; set; }
@@ -48,7 +51,7 @@ namespace APIVerve.API.CrosswordGenerator
         public Across[] Down { get; set; }
 
         [JsonProperty("wordCount")]
-        public long WordCount { get; set; }
+        public long? WordCount { get; set; }
 
         [JsonProperty("html")]
         public string Html { get; set; }
@@ -63,7 +66,7 @@ namespace APIVerve.API.CrosswordGenerator
     public partial class Across
     {
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         [JsonProperty("clue")]
         public string Clue { get; set; }
@@ -72,7 +75,7 @@ namespace APIVerve.API.CrosswordGenerator
         public string Answer { get; set; }
 
         [JsonProperty("length")]
-        public long Length { get; set; }
+        public long? Length { get; set; }
     }
 
     public partial class Image
@@ -87,6 +90,18 @@ namespace APIVerve.API.CrosswordGenerator
         public Uri DownloadUrl { get; set; }
 
         [JsonProperty("expires")]
-        public long Expires { get; set; }
+        public long? Expires { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
