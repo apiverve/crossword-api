@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_crosswordgenerator',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Crossword Generator creates crossword puzzles with intersecting words, numbered clues, and themed word selection.',
+    description='Crossword Generator is a crossword puzzle API that creates crosswords with intersecting words, numbered clues, and themed word selection.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/crossword?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/crossword?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
