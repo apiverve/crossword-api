@@ -2,8 +2,8 @@ openapi: 3.0.4
 info:
   title: Crossword Generator
   description: >-
-    Crossword Generator creates crossword puzzles with intersecting words,
-    numbered clues, and themed word selection.
+    Crossword Generator is a crossword puzzle API that creates crosswords with
+    intersecting words, numbered clues, and themed word selection.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/crossword:
     get:
-      summary: Generate Crossword
+      summary: Crossword Generator
       description: Create a crossword puzzle
       operationId: crossword
       parameters:
@@ -530,14 +530,12 @@ paths:
                   image:
                     imageName: 1838121c-9f76-44f8-b197-02e1db5987d5_puzzle.png
                     format: .png
-                    downloadURL: >-
-                      https://storage.googleapis.com/apiverve/APIData/crossword/1838121c-9f76-44f8-b197-02e1db5987d5_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010128&Signature=OYZsWA9QiINhqgC%2BSZSZpict%2B93ryyxvzUSIohJF%2BMGZ7SLGLA2Q47aVnwzLFzr8ZOK7IUQN4DZrAMh%2B0T8VqTMCLf76tj8BKLB1Qwo4IbMkkat1cbG6AFb44ungHGmCpwjwjwDYMwrDgI8%2Bg8dyKzwMZZmQHf5Q1hYNsy084Q%2BBTLAx6KUL%2FIZdw5pp0Rnxiq8aHdPrm%2Fbq2NU1UuMUDg8uBc8TR%2FHYN%2FOljXeyhv6Nbf4FXJCPLTMDdLDqblecNKhfQ67Dc4FdPD%2BF1IPN2A5G9VfkPb5v5KA5iiM8RF4zr8kHW%2FMlncbKSynvLp7QjtL9qZlSHn3%2Bn0pJpf%2FEUA%3D%3D
+                    downloadURL: https://storage.googleapis.com/apiverve/APIData/crossword/1838121c-9f76-44f8-b197-02e1db5987d5_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010128&Signature=OYZsWA9QiINhqgC%2BSZSZpict%2B93ryyxvzUSIohJF%2BMGZ7SLGLA2Q47aVnwzLFzr8ZOK7IUQN4DZrAMh%2B0T8VqTMCLf76tj8BKLB1Qwo4IbMkkat1cbG6AFb44ungHGmCpwjwjwDYMwrDgI8%2Bg8dyKzwMZZmQHf5Q1hYNsy084Q%2BBTLAx6KUL%2FIZdw5pp0Rnxiq8aHdPrm%2Fbq2NU1UuMUDg8uBc8TR%2FHYN%2FOljXeyhv6Nbf4FXJCPLTMDdLDqblecNKhfQ67Dc4FdPD%2BF1IPN2A5G9VfkPb5v5KA5iiM8RF4zr8kHW%2FMlncbKSynvLp7QjtL9qZlSHn3%2Bn0pJpf%2FEUA%3D%3D
                     expires: 1766010128609
                   solutionImage:
                     imageName: 3ec675cd-0e16-4e50-87f4-8f4192abea5b_solution.png
                     format: .png
-                    downloadURL: >-
-                      https://storage.googleapis.com/apiverve/APIData/crossword/3ec675cd-0e16-4e50-87f4-8f4192abea5b_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010129&Signature=L07115whFCEM3yuFDBILq7r4v26RoSYQzv81S7bwL8yJFcHRjHcKsqUhI6UWaDo4LPKfAjmk%2Fs1gN3z33ma12GE2fJYkp4mxD40EhyY%2BDjR3ja7m%2Fj20Zenu%2FdcOukkS9DCfGiYEa%2BxQDT4I2gjDVORhe7JeDuLeKCFtbsiLZFIlWNZoq6K7YbNc4BWDnwcqviJXSB%2FvWa1FMhXpQFoTIeJVvUCcdOGGVR6Vdl%2BPxwWN%2FAjXcsvNYbIhtyEZHaXQuXxI3zmCMg0eI770cVuhs7rm8JVdN7gYtojprJxTYl9nRx793SRuLcFfJD%2BRhx2dBmpMtXkcZFmv4%2Bz74oZY8Q%3D%3D
+                    downloadURL: https://storage.googleapis.com/apiverve/APIData/crossword/3ec675cd-0e16-4e50-87f4-8f4192abea5b_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010129&Signature=L07115whFCEM3yuFDBILq7r4v26RoSYQzv81S7bwL8yJFcHRjHcKsqUhI6UWaDo4LPKfAjmk%2Fs1gN3z33ma12GE2fJYkp4mxD40EhyY%2BDjR3ja7m%2Fj20Zenu%2FdcOukkS9DCfGiYEa%2BxQDT4I2gjDVORhe7JeDuLeKCFtbsiLZFIlWNZoq6K7YbNc4BWDnwcqviJXSB%2FvWa1FMhXpQFoTIeJVvUCcdOGGVR6Vdl%2BPxwWN%2FAjXcsvNYbIhtyEZHaXQuXxI3zmCMg0eI770cVuhs7rm8JVdN7gYtojprJxTYl9nRx793SRuLcFfJD%2BRhx2dBmpMtXkcZFmv4%2Bz74oZY8Q%3D%3D
                     expires: 1766010129033
         '401':
           description: Your request was not authorized, or your API Key was invalid
