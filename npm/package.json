@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/crossword",
-  "version": "1.2.0",
-  "description": "Crossword Generator creates crossword puzzles with intersecting words, numbered clues, and themed word selection.",
+  "version": "1.2.2",
+  "description": "Crossword Generator is a crossword puzzle API that creates crosswords with intersecting words, numbered clues, and themed word selection.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "crossword", "puzzle generator", "word grid", "clues", "printable crossword"
+    "crossword api", "crossword puzzle api", "crossword generator api", "crossword puzzle generator", "printable crossword"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/crossword-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/crossword?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/crossword?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
