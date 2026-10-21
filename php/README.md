@@ -1,6 +1,6 @@
 # Crossword Generator API - PHP Package
 
-Crossword Generator creates crossword puzzles with intersecting words, numbered clues, and themed word selection.
+Crossword Generator is a crossword puzzle API that creates crosswords with intersecting words, numbered clues, and themed word selection.
 
 ## Installation
 
@@ -442,11 +442,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/crossword?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/crossword?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/crossword?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/crossword?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/crossword?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/crossword?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
