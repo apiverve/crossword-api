@@ -46,12 +46,14 @@ final _formatPatterns = {
 
 /// Crossword Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/crossword?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/crossword?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [size] - Grid size: small, medium, large
 /// * [theme] - Theme: random, animals, food, sports, science, geography
 /// * [difficulty] - Difficulty: easy, medium, hard
+/// * [image] - Set to true to generate a downloadable puzzle image
+/// * [solutionImage] - Set to true to generate a downloadable solution image
 class CrosswordClient {
   final String apiKey;
   final String baseUrl;
@@ -62,6 +64,8 @@ class CrosswordClient {
     'size': ValidationRule(type: 'string', required: false),
     'theme': ValidationRule(type: 'string', required: false),
     'difficulty': ValidationRule(type: 'string', required: false),
+    'image': ValidationRule(type: 'boolean', required: false),
+    'solutionImage': ValidationRule(type: 'boolean', required: false),
   };
 
   CrosswordClient(this.apiKey, {
