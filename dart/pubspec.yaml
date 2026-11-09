@@ -1,6 +1,6 @@
 name: apiverve_crossword
 description: "Crossword Generator is a crossword puzzle API that creates crosswords with intersecting words, numbered clues, and themed word selection."
-version: 1.2.4
+version: 1.2.5
 homepage: https://apiverve.com/marketplace/crossword?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/crossword-api/tree/main/dart
 
